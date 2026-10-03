@@ -4,7 +4,7 @@ metadata:
   name: tp1-gitops
 spec:
   replicas: 2
-  progressDeadlineSeconds: 60
+  progressDeadlineSeconds: 15
   minReadySeconds: 5
   strategy:
     type: RollingUpdate
