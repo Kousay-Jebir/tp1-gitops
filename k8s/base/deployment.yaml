@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tp1-gitops
+spec:
+  replicas: 2
+  progressDeadlineSeconds: 60
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: tp1-gitops
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: tp1-gitops
+    spec:
+      containers:
+        - name: app
+          image: ghcr.io/kousay-jebir/tp1-gitops
+          ports:
+            - name: http
+              containerPort: 8080
