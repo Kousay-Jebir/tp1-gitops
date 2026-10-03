@@ -7,4 +7,4 @@ replicas:
     count: 3
 images:
   - name: ghcr.io/kousay-jebir/tp1-gitops
-    newTag: local
+    newTag: wrongtag
