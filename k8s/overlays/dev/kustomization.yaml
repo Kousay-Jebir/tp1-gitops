@@ -4,7 +4,7 @@ resources:
   - ../../base
 replicas:
   - name: tp1-gitops
-    count: 2
+    count: 3
 images:
   - name: ghcr.io/kousay-jebir/tp1-gitops
     newTag: local
