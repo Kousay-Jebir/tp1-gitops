@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: tp1
+  namespace: argocd
+spec:
+  description: Lab 1 GitOps demo application
+  sourceRepos:
+    - https://github.com/Kousay-Jebir/tp1-gitops.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: tp1-gitops
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
